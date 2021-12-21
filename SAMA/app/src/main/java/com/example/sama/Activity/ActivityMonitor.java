@@ -3,6 +3,7 @@ package com.example.sama.Activity;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 import com.example.sama.StepCounter;
 
 /*
@@ -10,28 +11,46 @@ import com.example.sama.StepCounter;
  */
 @Entity
 public class ActivityMonitor{
+    @PrimaryKey
     public int  currentLevel;
-    public int targetLevel;
+    private int targetLevel;
+    public int level;
     public String advice;
-    SensorManager sensorManager;
-    Sensor stepCounter;
 
+    public static SensorManager sensorManager = null;
+    public static final Sensor stepCounter = null;
     public ActivityMonitor() {
         //Get activity target from ActivityTarget class
         ActivityTarget target = new ActivityTarget();
         int level = target.calcTarget();
         
         //Get current activity level from StepCounter class
-        StepCounter counter = new StepCounter(sensorManager, stepCounter);
-        currentLevel.set(counter.getSteps());
+        StepCounter counter = new StepCounter(getSensorManager(), stepCounter);
+        currentLevel = counter.getSteps();
     }
 
     //Update current step count and compare to the target count
     private void evaluateLevel() {
-        StepCounter counter = new StepCounter(sensorManager,stepCounter);
-        currentLevel.set(counter.getSteps());
+        StepCounter counter = new StepCounter(getSensorManager(),stepCounter);
+        currentLevel = counter.getSteps();
 
-        if (currentLevel.get() < targetLevel.get()) advice = "You haven't reached your goal yet. Keep trying!";
+        if (currentLevel < getTargetLevel()) advice = "You haven't reached your goal yet. Keep trying!";
         else                            advice = "You've reached your goal! Great job!";
+    }
+
+    public int getTargetLevel() {
+        return targetLevel;
+    }
+
+    public void setTargetLevel(int targetLevel) {
+        this.targetLevel = targetLevel;
+    }
+
+    public SensorManager getSensorManager() {
+        return sensorManager;
+    }
+
+    public void setSensorManager(SensorManager sensorManager) {
+        this.sensorManager = sensorManager;
     }
 }
