@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0.56" android:background="#0000"
+    >
+
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:inputType="text"
+                android:text="@string/activity_monitor"
+                android:clickable="false"
+                android:textSize="20sp"
+                android:ems="10"
+                android:id="@+id/Title"
+                app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" android:visibility="visible" tools:visibility="visible"
+                android:importantForAutofill="no" tools:ignore="LabelFor"/>
+        <ProgressBar
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/actvityToday"
+                android:min="0"
+                android:max="100"
+                android:progress="50"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:background="#0000"
+                android:visibility="visible" tools:visibility="visible" app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Title"
+                app:layout_constraintBottom_toTopOf="@+id/DailyActivity"
+                android:animationResolution="@integer/material_motion_duration_long_1"/>
+        <EditText
+                android:layout_width="220dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:inputType="text"
+                android:text="Progress Towards Goal"
+                android:ems="10"
+                android:id="@+id/DailyActivity"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintHorizontal_bias="0.449"
+                app:layout_constraintTop_toBottomOf="@+id/actvityToday" android:visibility="visible"
+                tools:visibility="visible" android:layout_marginLeft="35dp" android:layout_marginStart="35dp"
+                app:layout_constraintBottom_toTopOf="@+id/stepsTaken"/>
+        <ProgressBar
+                style="?android:attr/progressBarStyle"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/stepsTaken"
+                android:progress="50"
+                android:background="#FFFFFF" android:visibility="invisible"
+                tools:visibility="visible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/DailyActivity"
+                app:layout_constraintBottom_toTopOf="@+id/StepsTaken"
+                android:animationResolution="@integer/material_motion_duration_long_1"
+        />
+        <EditText
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:inputType="text"
+                android:text="Steps Taken"
+                android:ems="10"
+                android:id="@+id/StepsTaken"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:visibility="visible" tools:visibility="visible" app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/stepsTaken"/>
+        <EditText
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/steps"
+                app:layout_constraintStart_toEndOf="@+id/StepsTaken" app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/StepsTaken"
+                android:visibility="visible" tools:visibility="visible" android:layout_marginBottom="100dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

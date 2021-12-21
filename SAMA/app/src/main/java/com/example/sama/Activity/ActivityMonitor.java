@@ -11,10 +11,11 @@ import com.example.sama.StepCounter;
 @Entity
 public class ActivityMonitor{
     public int  currentLevel;
-    public int targetLevel;
+    private int targetLevel;
+    public int level;
     public String advice;
-    SensorManager sensorManager;
-    Sensor stepCounter;
+    public SensorManager sensorManager;
+    public Sensor stepCounter;
 
     public ActivityMonitor() {
         //Get activity target from ActivityTarget class
@@ -23,15 +24,23 @@ public class ActivityMonitor{
         
         //Get current activity level from StepCounter class
         StepCounter counter = new StepCounter(sensorManager, stepCounter);
-        currentLevel.set(counter.getSteps());
+        currentLevel = counter.getSteps();
     }
 
     //Update current step count and compare to the target count
     private void evaluateLevel() {
         StepCounter counter = new StepCounter(sensorManager,stepCounter);
-        currentLevel.set(counter.getSteps());
+        currentLevel = counter.getSteps();
 
-        if (currentLevel.get() < targetLevel.get()) advice = "You haven't reached your goal yet. Keep trying!";
+        if (currentLevel < getTargetLevel()) advice = "You haven't reached your goal yet. Keep trying!";
         else                            advice = "You've reached your goal! Great job!";
+    }
+
+    public int getTargetLevel() {
+        return targetLevel;
+    }
+
+    public void setTargetLevel(int targetLevel) {
+        this.targetLevel = targetLevel;
     }
 }
