@@ -1,9 +1,5 @@
 package com.example.sama;
 
-import android.content.Context;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.room.Room;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,12 +7,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 import com.example.sama.Data.UserDao;
 import com.example.sama.Data.UserDatabase;
 import com.example.sama.Model.User;
-
-import static com.example.sama.R.layout.activity_login;
 
 public class RegistrationActivity extends AppCompatActivity {
     EditText editTextUserID, editTextUsername, editTextPassword, editTextCnfPassword;
@@ -36,7 +31,7 @@ public class RegistrationActivity extends AppCompatActivity {
         editTextCnfPassword = findViewById(R.id.editTextCnfPassword);
         buttonRegister = findViewById(R.id.buttonRegister);
 
-        textViewLogin = findViewById(activity_login);
+        textViewLogin = findViewById(R.id.loginDisplay);
         textViewLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
