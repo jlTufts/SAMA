@@ -9,13 +9,23 @@ import java.io.Serializable;
 
 @Entity
 public class User implements Serializable {
+    public User(){
+
+    }
 
     @PrimaryKey(autoGenerate = true)
+    //need to return an integer
+    public int id;
+    public int id(){this.id = id; return id;}
+    public int getid(){return id;};
+    public int setid(int id){
+        this.id = id;
+        return id;}
     @NonNull
     private String userID; //username
-    private String username; //name
+    public String username; //name
     private String password;
-
+    //must have a usable public constructor
     public User(@NotNull String userID, String userName, String password) {
         this.userID = userID;
         this.username = userName;

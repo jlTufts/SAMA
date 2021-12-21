@@ -6,7 +6,9 @@ import com.example.sama.ActivityHist;
 @Dao
 public interface ActivityHistoryDao {
     @Query("SELECT * FROM User where username= :username")
-    ActivityHist getHistory(String username);
+    default ActivityHist getHistory(String username) {
+        return null;
+    }
 
     /**
      * @param userHistory

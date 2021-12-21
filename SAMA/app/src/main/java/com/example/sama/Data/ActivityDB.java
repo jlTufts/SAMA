@@ -2,8 +2,10 @@ package com.example.sama.Data;
 
 import androidx.room.RoomDatabase;
 import com.example.sama.Activity.ActivityMonitor;
+import com.example.sama.ActivityHist;
+import com.example.sama.Model.User;
 
-@androidx.room.Database(entities = {ActivityMonitor.class}, version = 1)
+@androidx.room.Database(entities = {ActivityMonitor.class, ActivityHist.class, User.class}, version = 1)
 
 public abstract class ActivityDB extends RoomDatabase {
 
