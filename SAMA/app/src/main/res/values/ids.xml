@@ -4,4 +4,5 @@
     <item name="editTextPassword" type="id"/>
     <item name="buttonLogin" type="id"/>
     <item name="textViewRegister" type="id"/>
+
 </resources>
