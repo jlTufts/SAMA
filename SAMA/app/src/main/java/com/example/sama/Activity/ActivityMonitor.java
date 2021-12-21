@@ -9,9 +9,9 @@ import com.example.sama.StepCounter;
  * ActivityMonitor provides the user with activity advice based on their levels.
  */
 @Entity
-public class ActivityMonitor <currentLevel>{
-    final ThreadLocal<Integer> currentLevel = ThreadLocal.withInitial(() -> 0);
-    final ThreadLocal<Integer> targetLevel = ThreadLocal.withInitial(() -> 0);
+public class ActivityMonitor{
+    public int  currentLevel;
+    public int targetLevel;
     public String advice;
     SensorManager sensorManager;
     Sensor stepCounter;
