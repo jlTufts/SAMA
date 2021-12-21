@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">SAMA</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">password</string>
+    <string name="action_sign_in_short">sign in</string>
+    <string name="action_sign_in">Sign IN</string>
+    <string name="first_name">first name</string>
+    <string name="enter_username">Enter Username</string>
+    <string name="cancel">Cancel</string>
+    <string name="registration">registration</string>
+    <string name="SAMA">SAMA</string>
+    <string name="login">Login</string>
+</resources>
