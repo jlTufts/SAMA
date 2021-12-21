@@ -4,16 +4,17 @@ import androidx.room.*;
 import com.example.sama.PhysicalAttributes;
 
 @Dao
-public interface PhysicalInfoDao {
+public abstract class PhysicalInfoDao {
+    public PhysicalInfoDao(){}
     @Query("SELECT * FROM User where username= :username")
-    PhysicalInfoDao getInfoDB(String username);
+    public abstract PhysicalInfoDao getInfoDB(String username);
 
     @Insert
-    void insert(PhysicalAttributes userInformation);
+    public abstract void insert(PhysicalAttributes userInformation);
 
     @Update
-    void update(PhysicalAttributes userInformation);
+    public abstract void update(PhysicalAttributes userInformation);
 
     @Delete
-    void delete(PhysicalAttributes userInformation);
+    public abstract void delete(PhysicalAttributes userInformation);
 }
