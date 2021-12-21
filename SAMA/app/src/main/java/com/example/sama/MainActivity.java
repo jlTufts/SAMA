@@ -24,14 +24,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
+        //instantiate login view
+        setContentView(R.layout.activity_login);
+        //setup variables
         editTextUsername = findViewById(R.id.editTextUsername);
         editTextPassword = findViewById(R.id.editTextPassword);
         buttonLogin = findViewById(R.id.buttonLogin);
-
+        //set text view to register
         textViewRegister = findViewById(R.id.textViewRegister);
-
+        //setup database
         dataBase = Room.databaseBuilder(this, UserDatabase.class, "mi-database.db")
                 .allowMainThreadQueries()
                 .build();
@@ -43,6 +44,11 @@ public class MainActivity extends AppCompatActivity {
 
         buttonLogin.setOnClickListener(this::onClick);
 
+
+    }
+    public void onRegister(View reg){
+        Intent intent = new Intent(this, RegistrationActivity.class);
+        startActivity(intent);
     }
 
     private void onClick(View v) {
