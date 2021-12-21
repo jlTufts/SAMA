@@ -26,6 +26,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         //instantiate login view
         setContentView(R.layout.activity_login);
+
+        //if new user they should press register and that window should appear
+        onRegister(R.layout.activity_register);
+        //if not then the login screen will take variables
         //setup variables
         editTextUsername = findViewById(R.id.editTextUsername);
         editTextPassword = findViewById(R.id.editTextPassword);
@@ -40,15 +44,18 @@ public class MainActivity extends AppCompatActivity {
         db = dataBase.getUserDao();
 
 
-        textViewRegister.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, RegistrationActivity.class)));
+       // textViewRegister.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, RegistrationActivity.class)));
 
-        buttonLogin.setOnClickListener(this::onClick);
+       // buttonLogin.setOnClickListener(this::onClick);
 
 
     }
-    public void onRegister(View reg){
+    public void onRegister(int reg){
         Intent intent = new Intent(this, RegistrationActivity.class);
-        startActivity(intent);
+        Button register = (Button) findViewById(R.id.buttonRegister);
+        //if user selects to register bring to register activity window
+        if(register.isActivated()){
+        startActivity(intent);}
     }
 
     private void onClick(View v) {
@@ -64,5 +71,9 @@ public class MainActivity extends AppCompatActivity {
         } else {
             Toast.makeText(MainActivity.this, "Unregistered user, or incorrect", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    public void register(View view) {
+
     }
 }

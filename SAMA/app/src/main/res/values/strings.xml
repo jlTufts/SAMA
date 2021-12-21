@@ -11,4 +11,5 @@
     <string name="SAMA">SAMA</string>
     <string name="login">Login</string>
     <string name="activity_monitor">Activity Monitor</string>
+    <string name="register_new_user">REGISTER NEW USER</string>
 </resources>
