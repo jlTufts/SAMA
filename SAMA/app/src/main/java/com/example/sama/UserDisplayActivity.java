@@ -33,7 +33,8 @@ public class UserDisplayActivity extends AppCompatActivity {
         buttonSave = findViewById(R.id.buttonSave);
         buttonExit = findViewById(R.id.buttonExit);
 
-        textViewDisplay = findViewById(R.id.textViewLogin);
+
+        textViewDisplay = findViewById(R.id.linearLayout);
         textViewDisplay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

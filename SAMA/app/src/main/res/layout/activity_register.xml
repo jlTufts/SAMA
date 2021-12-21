@@ -9,7 +9,7 @@
             android:inputType="textPersonName"
             android:text="@string/first_name"
             android:ems="10"
-            android:id="@+id/editTextTextPersonName7" tools:layout_editor_absoluteY="166dp"
+            android:id="@+id/editTextUserID" tools:layout_editor_absoluteY="166dp"
             tools:layout_editor_absoluteX="25dp" android:textColor="#4CAF50" tools:ignore="MissingConstraints"/>
     <EditText
             android:layout_width="wrap_content"
@@ -17,7 +17,7 @@
             android:inputType="textPersonName"
             android:text="@string/prompt_password"
             android:ems="10"
-            android:id="@+id/editTextTextPersonName10" tools:layout_editor_absoluteY="398dp"
+            android:id="@+id/editTextCnfPassword" tools:layout_editor_absoluteY="398dp"
             tools:layout_editor_absoluteX="25dp" tools:ignore="MissingConstraints" android:textColor="#4CAF50"/>
     <EditText
             android:layout_width="wrap_content"
@@ -43,7 +43,7 @@
     <Button
             android:text="Register"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/button4" tools:layout_editor_absoluteY="501dp"
+            android:layout_height="wrap_content" android:id="@+id/buttonRegister" tools:layout_editor_absoluteY="501dp"
             tools:layout_editor_absoluteX="285dp" tools:ignore="MissingConstraints"/>
     <TextView
             android:text="@string/registration"

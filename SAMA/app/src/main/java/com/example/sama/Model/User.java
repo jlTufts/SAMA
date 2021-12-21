@@ -14,13 +14,10 @@ public class User implements Serializable {
     }
 
     @PrimaryKey(autoGenerate = true)
-    //need to return an integer
+    //need to return an integer and integer needed a constructor
     public int id;
     public int id(){this.id = id; return id;}
-    public int getid(){return id;};
-    public int setid(int id){
-        this.id = id;
-        return id;}
+
     @NonNull
     private String userID; //username
     public String username; //name

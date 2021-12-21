@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         String name = editTextUsername.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
 
-        User user = db.getUser(name, password);
+        User user = db.getUser(name);
         if (user != null) {
             Intent i = new Intent(MainActivity.this, UserDisplayActivity.class);
             i.putExtra("User", user);

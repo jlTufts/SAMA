@@ -6,8 +6,11 @@ import com.example.sama.PhysicalAttributes;
 @Dao
 public abstract class PhysicalInfoDao {
     public PhysicalInfoDao(){}
+
     @Query("SELECT * FROM User where username= :username")
-    public abstract PhysicalInfoDao getInfoDB(String username);
+    PhysicalInfoDao getUserName(String username) {
+        return null;
+    }
 
     @Insert
     public abstract void insert(PhysicalAttributes userInformation);

@@ -10,7 +10,7 @@ public interface UserDao {
     }
 
     @Query("SELECT * FROM User WHERE username= :username")
-    User getUser(String username, String password);
+    User getUser(String username);
 
     @Insert
     void insert(User user);
@@ -20,4 +20,5 @@ public interface UserDao {
 
     @Delete
     void delete(User user);
+
 }
